@@ -1,0 +1,52 @@
+
+<ion-header>
+    <ion-navbar color="primary" >
+      <ion-title>Referidos</ion-title>
+      <button clear ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-navbar>
+  </ion-header>
+  <ion-content class="no-scroll bg-1">
+    <ion-list class="scroll-content">
+      <ion-item no-padding *ngFor="let item of list" (click)="goToDetalle(item)">
+        <ion-row>
+          <ion-col class="barrita iconamar" *ngIf="!item.visit_id"> </ion-col>
+          <ion-col class="barrita iconverde" *ngIf="item.visit_status == '1'">
+          </ion-col>
+          <ion-col class="barrita iconrojo" *ngIf="item.visit_status == '2'">
+          </ion-col>
+          <ion-col
+            col-4
+            style="border-right: 1px solid darkgrey; text-align: center;"
+          >
+            <ion-icon name="calendar" style="color: #757575; 
+            font-size: 30px;
+            margin-bottom: 5px;"></ion-icon>
+            <p
+              class="letrica2"
+              *ngIf="item.visit_id"
+              style="white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;"
+            >
+              REFERIDO
+            </p>
+            
+          </ion-col>
+          <ion-col col-7>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+  
+            <h2 class="subtitle" style="  margin-left: 5px;">{{ item.name }}</h2>
+            <p style="margin-left: 5px; display: inline-block;" class="description">
+              {{ item.direction }}
+            </p>
+            <p style="margin-left: 5px;"  class="description">
+              {{ item.district }} {{ item.department }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <div style="width:100%; height: 20%" class="spacer"></div>
+    </ion-list>
+  </ion-content>

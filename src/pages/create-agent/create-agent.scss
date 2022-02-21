@@ -1,0 +1,228 @@
+page-create-agent {
+  ion-content {
+    background: rgb(229, 227, 223);
+    .mapGlobal {
+      width: 100%;
+      height: 100%;
+      /* opacity: 0;
+        transition: opacity 150ms ease-in;
+        display: block;
+        &.show-map{
+          opacity: 1;
+        }*/
+    }
+    .mapScroll {
+      width: 100%;
+      height: 250px;
+      /* opacity: 0;
+        transition: opacity 150ms ease-in;
+        display: block;
+        &.show-map{
+          opacity: 1;
+        }*/
+    }
+    .geolocation-btn {
+      margin: 0px;
+      padding: 0px;
+    }
+    .scroll {
+      height: calc(100% - 250px);
+    }
+    .adp-listsel {
+      background: #14a34aa3;
+      text-decoration: dotted;
+    }
+    td,
+    th {
+      padding: 0;
+      height: 40px;
+    }
+    .fa{
+      font-weight: 900;
+      width: 25%;
+      font-size: 30px;
+      text-align: center;
+      margin: 10px;
+      color: darkgray;
+    }
+     .active{
+      color: #14a34aa3;
+    }
+    .animated {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+    
+    .animated.infinite {
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+    }
+    
+    .animated.delay-1s {
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+    }
+    
+    .animated.delay-2s {
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+    }
+    
+    .animated.delay-3s {
+      -webkit-animation-delay: 3s;
+      animation-delay: 3s;
+    }
+    
+    .animated.delay-4s {
+      -webkit-animation-delay: 4s;
+      animation-delay: 4s;
+    }
+    
+    .animated.delay-5s {
+      -webkit-animation-delay: 5s;
+      animation-delay: 5s;
+    }
+    
+    .animated.fast {
+      -webkit-animation-duration: 800ms;
+      animation-duration: 800ms;
+    }
+    
+    .animated.faster {
+      -webkit-animation-duration: 500ms;
+      animation-duration: 500ms;
+    }
+    
+    .animated.slow {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+    }
+    
+    .animated.slower {
+      -webkit-animation-duration: 3s;
+      animation-duration: 3s;
+    }
+    
+    @media (print), (prefers-reduced-motion: reduce) {
+      .animated {
+        -webkit-animation-duration: 1ms !important;
+        animation-duration: 1ms !important;
+        -webkit-transition-duration: 1ms !important;
+        transition-duration: 1ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+    @-webkit-keyframes bounceInRight {
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(3000px, 0, 0);
+        transform: translate3d(3000px, 0, 0);
+      }
+    
+      60% {
+        opacity: 1;
+        -webkit-transform: translate3d(-25px, 0, 0);
+        transform: translate3d(-25px, 0, 0);
+      }
+    
+      75% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+      }
+    
+      90% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+      }
+    
+      to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes bounceInRight {
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+    
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(3000px, 0, 0);
+        transform: translate3d(3000px, 0, 0);
+      }
+    
+      60% {
+        opacity: 1;
+        -webkit-transform: translate3d(-25px, 0, 0);
+        transform: translate3d(-25px, 0, 0);
+      }
+    
+      75% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+      }
+    
+      90% {
+        -webkit-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+      }
+    
+      to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    .bounceInRight {
+      -webkit-animation-name: bounceInRight;
+      animation-name: bounceInRight;
+    }
+    
+    .divQuestion{
+      border: 1px solid #009b3a
+    }
+    .divQuestion .titlep{
+      background: #009b3a;
+      text-align: center;
+      color: white;
+    }
+    .divQuestion .icon{
+      text-align: center;
+      font-size: 20px;
+      margin-left: -1px;
+      width: 100%;
+      color: #009b3a;
+    }
+    .Arrowleft{
+      font-size: 18px;
+      padding: 0px;
+      margin: 0px;
+      color: #009b3a;
+    }
+    .message{
+      padding: 0px 15px;
+      text-align: justify;
+    }
+    .redtag{
+      color: red;
+    }
+  }
+}

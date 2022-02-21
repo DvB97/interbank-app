@@ -1,0 +1,167 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Detalle del cliente</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background-color: rgb(233, 231, 231)">
+  <ion-slides style="height: 40%;">
+    <ion-slide class="swiper-slide swiper-slide-next">
+      <img src="/assets/imgs/noimage.jpg" />
+    </ion-slide>
+  </ion-slides>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title class="title">
+        {{ data.name }}
+      </ion-card-title>
+      <ion-row>
+        <ion-col col-6>
+          <h2 class="letrica">ID Agente</h2>
+          <h2 class="botonitem">{{ data.agents }}</h2>
+        </ion-col>
+        <ion-col col-6>
+          <h2 class="letrica">DIR</h2>
+          <h2 class="botonitem">{{ data.dir }}</h2>
+        </ion-col>
+
+        <ion-col col-12>
+          <h2 class="letrica">Dirección</h2>
+          <h2 class="botonitem">{{ data.direction }}</h2>
+        </ion-col>
+
+        <ion-col col-12>
+          <h2 class="letrica">Distrito</h2>
+          <h2 class="botonitem">{{ data.district }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Provincia</h2>
+          <h2 class="botonitem">{{ data.province }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Departamento</h2>
+          <h2 class="botonitem">{{ data.department }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Región</h2>
+          <h2 class="botonitem">{{ data.region }}</h2>
+        </ion-col>
+        <!-- 
+        <ion-col col-6>
+          <h2 class="letrica">RUC</h2>
+          <h2 class="botonitem">{{ data.ruc }}</h2>
+        </ion-col>
+      -->
+        <ion-col col-6>
+          <h2 class="letrica">Teléfono fijo</h2>
+          <h2 class="botonitem">{{ data.phone }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Celular</h2>
+          <h2 class="botonitem">{{ data.mobile }}</h2>
+        </ion-col>
+
+        <ion-col col-12>
+          <h2 class="letrica">Representante legal</h2>
+          <h2 class="botonitem">{{ data.representative }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Fecha de inicio</h2>
+          <h2 class="botonitem">{{ data.start_date }}</h2>
+        </ion-col>
+
+        <ion-col col-6>
+          <h2 class="letrica">Tienda</h2>
+          <h2 class="botonitem">{{ data.store }}</h2>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Relacion</h2>
+          <h2 class="botonitem">{{ data.relation }}</h2>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Horario</h2>
+          <h2 class="botonitem">{{ data.schedule }}</h2>
+        </ion-col>
+
+        <ion-col col-12>
+          <h2 class="letrica">Correo titular</h2>
+          <h2 class="botonitem">{{ data.mail }}</h2>
+        </ion-col>
+        <!-- 
+        <ion-col col-12>
+          <h2 class="letrica">Cuenta registro</h2>
+          <h2 class="botonitem">{{ data.registration_account }}</h2>
+        </ion-col>
+        -->
+      </ion-row>
+    </ion-card-content>
+    <ion-list>
+        <!--  <ion-item>
+            <h2 class="botonitem">Solicitudes</h2>
+            <button
+              clear
+              icon-only
+              ion-button
+              float-right
+              on-click="goToSolicitudes(data.id)"
+            >
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-item>  -->
+      <ion-item>
+        <h2 class="botonitem">Permisos</h2>
+        <button
+          clear
+          icon-only
+          ion-button
+          float-right
+          on-click="goToPermisos(data.agents)"
+        >
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item>
+        <h2 class="botonitem">Notas</h2>
+        <button
+          clear
+          icon-only
+          ion-button
+          float-right
+          on-click="gotoNotepadList(data.id)"
+        >
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <button
+          clear
+          icon-only
+          ion-button
+          float-right
+          margin-left
+          on-click="gotoNotepad(data.id)"
+        >
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <a href="tel:{{ data.mobile }}">
+      <button icon ion-button color="secondary" class="boton centrar">
+        Llamar
+      </button></a
+    >
+    <a
+      href="https://www.waze.com/ul?ll={{ data.geoLat }}%2C{{
+        data.geoLong
+      }}&navigate=yes&zoom=15"
+    >
+      <button icon ion-button color="secondary" class="boton centrar">
+        Ir
+      </button></a
+    >
+    <div class="spacer" style="width:100%; height: 20px"></div>
+  </ion-card>
+</ion-content>

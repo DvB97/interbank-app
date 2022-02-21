@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Llamada 360</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="stepContent">
+ 
+  <div
+    class="wrapper centrarv"
+    style="margin:0 auto; "
+  >
+    <div class="example-1" (click)="colgar()">
+      <i [class]="classIcon" style="font-size:40px"></i>
+      <p style="line-height: 0px; margin-top: -38px;">{{ buttonText }}</p>
+    </div>
+  </div>
+  
+	<div *ngIf="data" style="text-align: center;">
+		<p>Tienes una llamada sin finalizar con <br/> {{ data.name }}</p>
+	</div>
+</ion-content>

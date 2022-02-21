@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title class="title">Lista de Prospección</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="no-scroll bg-1">
+  <ion-list class="scroll-content">
+      <ion-item-sliding no-padding *ngFor="let item of list">
+    <ion-item no-padding >
+      <ion-row>
+        <ion-col class="barrita iconverde">
+        </ion-col>
+        <ion-col
+          col-4
+          style="border-right: 1px solid darkgrey; text-align: center;"
+        >
+          <ion-icon
+            name="calendar"
+            style="color: #757575; 
+          font-size: 30px;
+          margin-bottom: 5px;"
+          ></ion-icon>
+          <p class="letrica2" *ngIf="!item.visit_status" >Guardado</p>
+          <p class="letrica2" *ngIf="item.visit_status == '1'" >{{ item.modified.substr(0,11) }}</p>
+          <p class="letrica2" *ngIf="item.visit_status == '2'" >No Aplica</p>
+        </ion-col>
+        <ion-col col-7>
+          <div class="spacer" style="width: 100%; height: 5%;"></div>
+
+          <h2 class="subtitle" style="  margin-left: 5px;">{{ item.name }}</h2>
+          <p
+            style="margin-left: 5px; display: inline-block;"
+            class="description"
+          >
+            {{ item.direction }}
+          </p>
+          <p style="margin-left: 5px;" class="description">
+            {{ item.district }} {{ item.department }}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item-options side="right">
+        <a href="http://agente.artsignsoluciones.com/report-referidos/{{ item.id }}" target="_blank"
+          *ngIf="item.visit_status == 1">
+          <button ion-button *ngIf="item.visit_status == 1">
+            <ion-icon name="download"></ion-icon>
+            Pdf
+          </button>
+        </a>
+        <button ion-button (click)="goToDetalle(item)">
+          <ion-icon name="eye"></ion-icon>
+          Ver
+        </button>
+      </ion-item-options>
+      
+    </ion-item-sliding>
+    <div style="width:100%; height: 20%" class="spacer"></div>
+  </ion-list>
+  <ion-row class="barrainferior ">
+    <ion-col no-padding class="a" (click)="goToCreate()" style="background: #009B3A; ">
+      <p  style=" color: white; text-align: center; font-weight: 400;">Crear Prospección</p>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

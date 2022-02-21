@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sincronizar Contacto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+   <ion-searchbar (ionInput)="getItems($event)" placeholder="Buscar..." ></ion-searchbar>
+    <ion-item *ngFor="let contacto of listaContactos" (click)="goToClick(contacto.phoneNumbers[0].value)">
+      <ion-avatar item-start>
+        <img [src]="contacto.photos[0].value ">
+      </ion-avatar>
+      <h2>{{contacto.displayName }}</h2>
+      <p>Dispositivo: {{contacto.phoneNumbers[0].type}} - Numero: {{contacto.phoneNumbers[0].value}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-fab bottom right edge >
+  <button ion-fab (click)="hideOverlay()">
+     <ion-icon name="brush"></ion-icon>
+  </button>
+  <ion-fab-list side="top">
+    <button ion-fab color="primary" (click)="goToWriter()">
+	  <ion-icon name="brush"></ion-icon>
+    </button>
+    <p class="fabText" style="top:6px">Marcar</p>
+  </ion-fab-list>
+</ion-fab>
+
+<div class="my-overlay" padding [hidden]="overlayHidden"></div>

@@ -1,0 +1,49 @@
+page-chat {
+
+  .barramsj {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    width: 100%;
+    left: 0px;
+    background-color: #dddddd;
+    text-align: left;
+  }
+  .msjrecibido {
+    width: 80%;
+    float: left;
+    background-color: #6ac076;
+    color: white;
+    border-radius: 0px 18px 18px 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 5vw;
+  }
+  .msjenviado {
+    width: 80%;
+    float: right;
+    background-color: #55acee;
+    color: white;
+    border-radius: 18px 0px 18px 18px;
+    font-size: 5vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .toolbar-title-md {
+    color: white;
+  }
+  .bar-button-default-md,
+  .bar-button-clear-md-default,
+  .bar-button-md-default {
+    color: white;
+  }
+  .toolbar-background-md {
+    border-color: #3b5998;
+    background: #55acee;
+  }
+  @media only screen and (max-height: 500px) {
+    .barramsj {
+      bottom: 50px;
+    }
+  }
+}

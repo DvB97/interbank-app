@@ -1,0 +1,45 @@
+<!--
+  Generated template for the HistorialModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Detalle de Permiso</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-col col-12>
+    <h1 style="text-align:center;" class="title">Resumen</h1>
+    <ion-list class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        {{data.type}}
+      </ion-list-header>
+      <ion-item class="cuerpo" *ngIf="data.request">Fecha de Solicitud: {{ data.request }}</ion-item>
+      <ion-item class="cuerpo" *ngIf="data.status=='EN CURSO'">Fecha de Entrega: {{ data.request_exp }}</ion-item>
+      <ion-item class="cuerpo">Numero de Expediente: {{data.num}}</ion-item>
+      <ion-item class="cuerpo">Fecha de Emisión: {{ data.date }}</ion-item>
+      <ion-item class="cuerpo" *ngIf="!data.exp_date">Fecha de Expedición: Indeterminada</ion-item>
+      <ion-item class="cuerpo" *ngIf="data.exp_date">Fecha de Expedición: {{ data.exp_date }}</ion-item>
+      <ion-item class="cuerpo">Estado: {{ data.status }}</ion-item>
+      <ion-card *ngIf="data.observations" style="margin:0px; width:100%">
+        <ion-card-header class="subtitle">
+          Observaciones
+        </ion-card-header>
+        <ion-card-content style="color:black;" class="cuerpo">
+          {{ data.observations }}
+        </ion-card-content>
+      </ion-card>
+      <ion-item class="cuerpo">
+        <a href="{{ data.attachment }}" target="_blank" *ngIf="data.attachment">
+          <button ion-button>
+            <ion-icon name="download"></ion-icon>
+            Archivo
+          </button>
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-col>
+</ion-content>

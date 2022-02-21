@@ -1,0 +1,42 @@
+<!--
+  Generated template for the SelectCajeroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Identificar Agente</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="stepContent">
+  <div class="wrapper centrarv" style="margin:0 auto;">
+    <div class="example-1" (click)="scanQR()">
+      <i [class]="classIcon" style="font-size:40px"></i>
+      <p style="line-height: 0px; margin-top: -38px;">PRESIONAR</p>
+    </div>
+  </div>
+</ion-content>
+<ion-fab bottom right edge>
+  <button ion-fab (click)="hideOverlay()">
+    <ion-icon name="arrow-round-up"></ion-icon>
+  </button>
+  <ion-fab-list side="top">
+    <button ion-fab color="primary" (click)="searchName()">
+      <ion-icon name="create"></ion-icon>
+    </button>
+    <button ion-fab color="primary" (click)="searchMueble()">
+      <ion-icon name="bookmark"></ion-icon>
+    </button>
+    <button ion-fab color="primary" (click)="searchMapa()">
+      <ion-icon name="map"></ion-icon>
+    </button>
+    <p class="fabText" style="top:6px">Cercanía</p>
+    <p class="fabText" style="top:60px">Identificador</p>
+    <p class="fabText" style="top:120px">Nombre</p>
+  </ion-fab-list>
+</ion-fab>
+<div class="my-overlay" padding [hidden]="overlayHidden"></div>

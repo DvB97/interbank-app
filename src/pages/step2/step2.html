@@ -1,0 +1,106 @@
+<!--
+  Generated template for the SelectCajeroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Paso n° 2</ion-title>
+  </ion-navbar>
+  <ion-row no-padding style="background: #009b3a">
+      <ion-col col-12 >
+        <ul class="progressbar">
+          <li >Scanear</li>
+          <li class="active">Solicitud</li>
+          <li>Fotos</li>
+          <li>Resumen</li>
+        </ul>
+      </ion-col>
+    </ion-row>
+</ion-header>
+
+<ion-content class="stepContent">
+
+  <ion-row>
+    <ion-col style="margin-top: -30px;">
+      <ion-col col-12>
+        <h1 style="text-align:center;" class="title">Seleccionar Productos</h1>
+      </ion-col>
+      <ion-row class="cuadroblanco">
+        <ion-col col>
+          <button
+            on-click="showMantenimiento()"
+            ion-button
+            color="primary"
+            block
+            style="font-size: 1rem;"
+          >
+            Mantenimiento
+          </button>
+        </ion-col>
+        <ion-col col>
+          <button on-click="showInstalacion()" ion-button color="primary" block   style="font-size: 1rem;">
+            Instalacion
+          </button>
+        </ion-col>
+        <ion-col col>
+          <button on-click="showRetiro()" ion-button color="primary" block   style="font-size: 1rem;">
+            Retiro
+          </button>
+        </ion-col>
+      </ion-row>
+      <div style="width:100%; height: 1px" class="spacer"></div>
+      <ion-list *ngIf="productMantenimiento" class="cuadroblanco">
+        <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+          Productos de Mantenimiento
+        </ion-list-header>
+        <ion-item *ngFor="let item of productMantenimiento" class="cuerpo" >{{
+          item
+        }}</ion-item>
+      </ion-list>
+      <div style="width:100%; height: 1px" class="spacer"></div>
+      <ion-list *ngIf="productInstalacion" class="cuadroblanco">
+        <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+          Productos de Instalacion
+        </ion-list-header>
+        <ion-item *ngFor="let item of productInstalacion" class="cuerpo" >{{ item }}</ion-item>
+      </ion-list>
+      <div style="width:100%; height: 1px" class="spacer"></div>
+      <ion-list *ngIf="typeRetirement" class="cuadroblanco">
+        <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+          Tipo de retiro
+        </ion-list-header>
+        <p style="margin-left: 15px;">{{ typeRetirement }}</p>
+        <ion-col col *ngIf="typeRetirement=='REUBICACION'">
+          <button
+            on-click="showProductRetiro()"
+            ion-button
+            color="primary"
+            block
+          >
+            Productos a reubicar
+          </button>
+        </ion-col>
+      </ion-list>
+      <ion-list *ngIf="productRetiro" class="cuadroblanco">
+        <ion-list-header style="margin-bottom: 0px;"  class="subtitle"
+          >Reubicación:
+        </ion-list-header>
+        <ion-item *ngFor="let item of productRetiro" class="cuerpo" >{{ item }}</ion-item>
+      </ion-list>
+      <ion-item style="    background-color: white;">
+        <ion-label stacked>Mensaje de Solicitud:</ion-label>
+        <ion-textarea
+          [(ngModel)]="observaciones"
+          rows="5"
+          cols="10"
+          placeholder="Ingrese aqui el mensaje que deseas adjuntar"
+        ></ion-textarea>
+      </ion-item>
+      <button color="primary" ion-button block on-click="gotoStepto3()">
+        Continuar
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>

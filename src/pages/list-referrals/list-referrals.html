@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title class="title">Lista de Referidos</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content class="no-scroll bg-1">
+  <ion-list class="scroll-content">
+    <ion-item-sliding no-padding *ngFor="let item of list">
+      <ion-item no-padding (click)="goToDetalle(item)">
+        <ion-row>
+          <ion-col class="barrita iconamar" *ngIf="!item.visit_status"> </ion-col>
+          <ion-col class="barrita iconverde" *ngIf="item.visit_status == '1'">
+          </ion-col>
+          <ion-col class="barrita iconazul" *ngIf="item.visit_status == '3'">
+          </ion-col>
+          <ion-col class="barrita iconrojo" *ngIf="item.visit_status == '2'">
+          </ion-col>
+          <ion-col col-4 style="border-right: 1px solid darkgrey; text-align: center;">
+            <ion-icon name="calendar" style="color: #757575; 
+          font-size: 30px;
+          margin-bottom: 5px;" *ngIf="!item.visit_status"></ion-icon>
+            <ion-icon name="checkmark" style="color: #757575; 
+            font-size: 30px;
+            margin-bottom: 5px;" *ngIf="item.visit_status == '1'"></ion-icon>
+            <ion-icon name="close" style="color: #757575; 
+              font-size: 30px;
+              margin-bottom: 5px;" *ngIf="item.visit_status == '2'"></ion-icon>
+            <ion-icon name="calendar" style="color: #757575; 
+            font-size: 30px;
+            margin-bottom: 5px;" *ngIf="item.visit_status == '3'"></ion-icon>
+            <p class="letrica2" *ngIf="!item.visit_status">PENDIENTE</p>
+            <p class="letrica2" *ngIf="item.visit_status == '1'">{{ item.modified.substr(0,11) }}</p>
+            <p class="letrica2" *ngIf="item.visit_status == '2'">NO APLICA</p>
+            <p class="letrica2" *ngIf="item.visit_status == '3'">EN CURSO</p>
+          </ion-col>
+          <ion-col col-7>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+
+            <h2 class="subtitle" style="  margin-left: 5px;">{{ item.name }}</h2>
+            <p style="margin-left: 5px; display: inline-block;" class="description">
+              {{ item.direction }}
+            </p>
+            <p style="margin-left: 5px;" class="description">
+              {{ item.district }} {{ item.department }}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <a href="http://agente.artsignsoluciones.com/report-referidos/{{ item.id }}" target="_blank"
+          *ngIf="item.visit_status == 1">
+          <button ion-button *ngIf="item.visit_status == 1">
+            <ion-icon name="download"></ion-icon>
+            Pdf
+          </button>
+        </a>
+        <button ion-button (click)="goToDetalle(item)">
+          <ion-icon name="eye"></ion-icon>
+          Ver
+        </button>
+         <button ion-button (click)="goToDetalle(item)">
+          <ion-icon name="edit"></ion-icon>
+          Edit
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <div style="width:100%; height: 20%" class="spacer"></div>
+  </ion-list>
+  <ion-row class="barrainferior ">
+    <ion-col no-padding class="a" (click)="filterStatus(null)">
+      <h2 style="text-align:center" class="subtitle">{{ pending }}</h2>
+      <p class="letrica2">Pendientes</p>
+      <ion-row no-padding class="iconamar rayita"></ion-row>
+    </ion-col>
+    <ion-col no-padding class="a" (click)="filterStatus('1')">
+      <h2 style="text-align:center" class="subtitle">{{ successful }}</h2>
+      <p class="letrica2">Aplica</p>
+      <ion-row no-padding class="iconverde rayita"></ion-row>
+    </ion-col>
+    <ion-col no-padding class="a" (click)="filterStatus('2')">
+      <h2 style="text-align:center" class="subtitle">{{ notsuccessful }}</h2>
+      <p class="letrica2">No Aplica</p>
+      <ion-row no-padding class="iconrojo rayita"></ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
+<ion-fab bottom right edge style="bottom: 125px;">
+  <button ion-fab (click)="hideOverlay()">
+    <ion-icon name="search"></ion-icon>
+  </button>
+  <ion-fab-list side="top">
+    <button ion-fab color="primary" (click)="filterDate()">
+      <ion-icon name="calendar"></ion-icon>
+    </button>
+    <button ion-fab color="primary" (click)="filterCluster()">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+    <button ion-fab color="primary" (click)="filterWrite()">
+      <ion-icon name="search"></ion-icon>
+    </button>
+    <p class="fabText" style="top:6px">Buscar</p>
+    <p class="fabText" style="top:60px">Filtrar por Tipo</p>
+    <p class="fabText" style="top:120px">Filtrar por Fecha</p>
+  </ion-fab-list>
+</ion-fab>
+<div class="my-overlay" padding [hidden]="overlayHidden"></div>

@@ -1,0 +1,22 @@
+SUBIR ARCHIVOS A TU SITIO
+Dependiendo de cómo esté alojado su sitio, es posible que deba comunicarse con alguien para que lo ayude a copiar los archivos en su sitio.
+
+
+
+Si aún no lo ha hecho, agregue este código a la sección <head> en todas las páginas de su sitio a las que los usuarios pueden suscribirse.
+
+
+<link rel="manifest" href="/manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "0d425a5c-6e20-4174-843f-58f610cb70a6",
+    });
+  });
+</script>
+
+
+
+¡Es hora de suscribirse a tus notificaciones! Simplemente vaya a su sitio web y permita las notificaciones push

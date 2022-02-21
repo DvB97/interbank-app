@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Guardar Posición del Referido</ion-title>
+  </ion-navbar>
+  <ion-row no-padding style="background: #009b3a">
+    <ion-col col-12>
+      <ul class="progressbar">
+        <li>Paso 1</li>
+        <li>Paso 2</li>
+        <li class="active">Paso 3</li>
+        <li>Paso 4</li>
+      </ul>
+    </ion-col>
+  </ion-row>
+  <ion-toolbar color="primary">
+    <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="updateSearchResults()" placeholder="Buscar por Zona">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list [hidden]="autocompleteItems.length == 0">
+    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+      {{ item.description }}
+    </ion-item>
+  </ion-list>
+  <div id="map" class="mapGlobal"></div>
+  <div>
+    <button class="botonazul  centrar" ion-button block on-click="InstalarQR()">
+      GUARDAR POSICIÓN
+    </button>
+  </div>
+</ion-content>

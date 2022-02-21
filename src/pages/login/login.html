@@ -1,0 +1,39 @@
+
+<ion-content  style="background-color: rgb(233, 231, 231)">
+    <div padding class="card-2 " style="background-color: #009b3a;     border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;">
+        <div class="spacer" style="width:100%; height:10px"></div>
+  
+        <img style="width: 70%" class="centrar" src="/assets/imgs/logo1.png"/>
+  
+        <div class="spacer" style="width:100%; height:10px"></div>
+    </div>
+  
+    <div padding>
+        <div class="spacer" style="width:100%; height:3%"></div>
+  
+        <ion-list padding no-margin>
+      
+          <ion-item no-padding >
+            <ion-input type="text" placeholder="DNI" [(ngModel)]="person.dni"></ion-input>
+          </ion-item>
+      
+          <div class="spacer" style="width:100%; height:30px"></div>
+      
+          <ion-item no-padding>
+            <ion-input type="password" placeholder="Contraseña"  [(ngModel)]="person.password"></ion-input>
+          </ion-item>
+      
+          <div class="spacer" style="width:100%; height:30px"></div>
+      
+          <button class="boton centrar" style="width:100%" ion-button color="primary" on-click="goToLogin()"
+      [disabled]="!button">
+            Iniciar Sesión
+          </button>
+        </ion-list>
+    </div>
+    
+  
+  
+  </ion-content>
+  

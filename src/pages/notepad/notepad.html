@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Notas</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content
+  style=" background:#333 url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;       "
+>
+  <div id="wrapper">
+    <textarea
+      placeholder="Información"
+      id="text"
+      name="text"
+      rows="20"
+      style="overflow: hidden; word-wrap: break-word; resize: none;  "
+      [(ngModel)]="text"
+      >{{ text }}
+  
+      </textarea
+    >
+  </div>
+</ion-content>

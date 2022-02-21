@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Comisiones</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background-color: rgb(233, 231, 231)">
+  <div class="cuadroblanco ">
+    <ion-item>
+      <ion-label>Filtrar por periodo</ion-label>
+      <ion-select name="desde"   [(ngModel)]="limit" (ionChange)="cargar()"> 
+        <ion-option *ngFor="let item of calendar" [value]="item.value">{{
+          item.label
+        }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div style="width:100%; height: 5%" class="spacer"></div>
+  <div class="cuadroblanco">
+    <ion-row padding *ngFor="let item of list">
+      <h3 style="width:100%;" class="title">{{item.date}}</h3>
+      <div style="width: 100%;">
+        <p no-margin block class="textlist" >Total Variable:</p>
+        <p no-margin block class="textlist">{{item.total_variable}}</p>
+      </div>
+      <div style="width: 100%;">
+        <p no-margin block class="textlist">Número de OC:</p>
+        <p no-margin block class="textlist">{{item.number_oc}}</p>
+      </div>
+      <div style="width: 100%;">
+        <p no-margin block class="textlist">Número de recepción:</p>
+        <p no-margin block class="textlist">{{item.number_reception}}</p>
+      </div>
+      <div style="width:100%; height: 5%" class="spacer"></div>
+    </ion-row>
+  </div>
+</ion-content>

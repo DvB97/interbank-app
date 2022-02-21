@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Lista de Notas</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content style="background-color: rgb(233, 231, 231)">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of list">
+      <ion-item>
+        <ion-icon name="list-box" item-start style="color: #1e429a;"></ion-icon>
+        <h2>
+          {{item.text}}
+        </h2>
+        <p>{{item.date}}</p>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" on-click="gotoNote(item.id)">
+          <ion-icon name="eye"></ion-icon>
+          Ver
+        </button>
+        
+        <button ion-button color="danger" on-click="gotoRemove(item.id)">
+          <ion-icon name="eye"></ion-icon>
+          Eliminar
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

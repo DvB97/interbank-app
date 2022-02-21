@@ -1,0 +1,206 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Historial de Solicitudes</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content class=" bg-1">
+  <ion-list >
+    <ion-item-sliding no-padding *ngFor="let item of list">
+      <ion-item no-padding no-margin>
+        <!-- Pendiente-->
+        <ion-row *ngIf="item.state == 0">
+          <ion-col class="barrita iconamar"> </ion-col>
+          <ion-col col-11>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+
+            <h2>{{ item.agents.name }}</h2>
+            <h2 *ngIf="roles == 'Interbank'">{{ item.users.name }}</h2>
+            <h2 *ngIf="roles == 'Artsign'">{{ item.users.name }}</h2>
+
+            <ion-icon style="color:darkgray" name="calendar"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Fecha de Solicitud: {{ item.fecha }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:rgb(196, 194, 98)"
+              name="checkmark-circle"
+            ></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Pendiente
+            </p>
+          </ion-col>
+        </ion-row>
+        <!-- Pre-Aprobado-->
+        <ion-row *ngIf="item.state == 4">
+          <ion-col class="barrita iconpreazul"> </ion-col>
+          <ion-col col-10>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+            <h2>{{ item.agents.name }}</h2>
+            <h2 *ngIf="roles == 'Interbank'">{{ item.users.name }}</h2>
+            <h2 *ngIf="roles == 'Artsign'">{{ item.users.name }}</h2>
+            <ion-icon style="color:darkgray" name="calendar"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Pre-Aprobado Fecha de Solicitud: {{ item.fecha }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:darkgray"
+              name="calendar"
+              *ngIf="item.fechaentrega"
+            ></ion-icon>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="item.fechaentrega"
+            >
+              Pre-Aprobado Fecha de Entrega: {{ item.fechaentrega }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:rgb(57, 62, 70)"
+              name="checkmark-circle"
+            ></ion-icon>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="!item.fechaentrega"
+            >
+              Pre-Aprobado
+            </p>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="item.fechaentrega"
+            >
+              En Curso
+            </p>
+          </ion-col>
+        </ion-row>
+        <!-- Aprobado-->
+        <ion-row *ngIf="item.state == 1">
+          <ion-col class="barrita iconazul"> </ion-col>
+          <ion-col col-10>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+            <h2>{{ item.agents.name }}</h2>
+            <h2 *ngIf="roles == 'Interbank'">{{ item.users.name }}</h2>
+            <h2 *ngIf="roles == 'Artsign'">{{ item.users.name }}</h2>
+            <ion-icon style="color:darkgray" name="calendar"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Fecha de Solicitud: {{ item.fecha }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:darkgray"
+              name="calendar"
+              *ngIf="item.fechaentrega"
+            ></ion-icon>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="item.fechaentrega"
+            >
+              Fecha de Entrega: {{ item.fechaentrega }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:rgb(98, 132, 196)"
+              name="checkmark-circle"
+            ></ion-icon>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="!item.fechaentrega"
+            >
+              Aprobado
+            </p>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="item.fechaentrega"
+            >
+              En Curso
+            </p>
+          </ion-col>
+        </ion-row>
+        <!-- Completado-->
+        <ion-row *ngIf="item.state == 2">
+          <ion-col class="barrita iconverde"> </ion-col>
+          <ion-col col-10>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+            <h2>{{ item.agents.name }}</h2>
+            <h2 *ngIf="roles == 'Interbank'">{{ item.users.name }}</h2>
+            <h2 *ngIf="roles == 'Artsign'">{{ item.users.name }}</h2>
+            <ion-icon style="color:darkgray" name="calendar"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Fecha de Solicitud: {{ item.fecha }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:darkgray"
+              name="calendar"
+              *ngIf="item.fechaentrega"
+            ></ion-icon>
+            <p
+              style="margin-left: 5px; display: inline-block;"
+              *ngIf="item.fechaentrega"
+            >
+              Fecha de Finalización: {{ item.fechaentrega }}
+            </p>
+            <br />
+            <ion-icon
+              style="color:rgb(98, 196, 106)"
+              name="checkmark-circle"
+            ></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Completado
+            </p>
+          </ion-col>
+        </ion-row>
+        <!-- Rechazado-->
+        <ion-row *ngIf="item.state == 3">
+          <ion-col class="barrita iconrojo"> </ion-col>
+          <ion-col col-11>
+            <div class="spacer" style="width: 100%; height: 5%;"></div>
+            <h2>{{ item.agents.name }}</h2>
+            <h2 *ngIf="roles == 'Interbank'">{{ item.users.name }}</h2>
+            <h2 *ngIf="roles == 'Artsign'">{{ item.users.name }}</h2>
+            <ion-icon style="color:darkgray" name="calendar"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Fecha de Solicitud: {{ item.fecha }}
+            </p>
+            <br />
+            <ion-icon style="color:#c46262" name="checkmark-circle"></ion-icon>
+            <p style="margin-left: 5px; display: inline-block;">
+              Rechazado
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="goToChat(item)">
+          <ion-icon name="chatbubbles"></ion-icon>
+          Chat
+        </button>
+        <a
+          href="http://agente.artsignsoluciones.com/informealerta/{{ item.id }}"
+          target="_blank"
+          *ngIf="item.state == 2"
+        >
+          <button ion-button *ngIf="item.state == 2">
+            <ion-icon name="download"></ion-icon>
+            Pdf
+          </button>
+        </a>
+        <button ion-button (click)="detalle(item)">
+          <ion-icon name="eye"></ion-icon>
+          Ver
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-infinite-scroll threshold="25%" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando Información..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

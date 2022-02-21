@@ -1,0 +1,31 @@
+page-notepad {
+    * {
+        outline:none;
+          border:none;
+          margin:0px;
+          padding:0px;
+      }
+      #paper {
+          color:#FFF;
+          font-size:20px;
+      }
+      #text {
+          overflow:hidden;
+          background-color:#FFF;
+          color:#222;
+          font-family:Courier, monospace;
+          font-weight:normal;
+          font-size:20px;
+          resize:none;
+          line-height:40px;
+          padding-left:40px;
+          padding-right:100px;
+          padding-top:45px;
+          padding-bottom:34px;
+          background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+          background-repeat:repeat-y, repeat;
+          background-position-x: -60px;
+          -webkit-box-shadow: 0px 2px 14px #000;
+          box-shadow: 0px 2px 14px #000;
+      }
+}

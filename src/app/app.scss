@@ -1,0 +1,515 @@
+.title {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+}
+.subtitle {
+  font-size: 16px;
+  font-weight: 400;
+}
+.itemsmenu {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #757575 !important;
+}
+.cuerpo {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.description {
+  font-size: 12px;
+  font-weight: 400;
+}
+.colorGris {
+  background-color: #757575;
+}
+.alert-title {
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  text-align: center;
+}
+.alert-button{
+  font-size: 14px !important;
+  font-weight: 500 !important;
+}
+.alert-message {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+.alert-checkbox-label{
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.gradiente {
+  background-image: linear-gradient(to top, #e9e7e7, #009b3a);
+}
+
+.list-ios > .item-block:first-child {
+  border-top: 0px solid #c8c7cc;
+}
+
+.list-md > .item-block:first-child {
+  border-top: 0px solid #c8c7cc;
+}
+
+.subrayado {
+  border-bottom: 1px solid darkgrey;
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.stripes {
+  background-size: 30px 30px;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+.stripes.animated {
+  animation: animate-stripes 0.6s linear infinite;
+}
+
+.stripes.animated.slower {
+  animation-duration: 1.25s;
+}
+
+.stripes.reverse {
+  animation-direction: reverse;
+}
+
+.card-2 {
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.16), 0 0px 8px rgba(0, 0, 0, 0.23);
+}
+
+.item-md .item-button {
+  padding: 0 0.6em;
+  height: 25px;
+  font-size: 1.8rem;
+}
+
+.letrica {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #757575 !important;
+  margin-top: 5px !important;
+}
+
+.barrita {
+  max-width: 15px;
+}
+
+.a {
+  border-left: 0.2px solid darkgray;
+}
+
+.iconoslist {
+  color: darkgray;
+  font-size: 30px;
+}
+
+.textlist {
+  margin-left: 5px !important;
+  display: inline-block;
+  margin-top: 5px !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.cuadroblanco {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.barrainferior {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  background-color: white;
+  z-index: 10;
+}
+.a:active {
+  box-shadow: 0 0px 8px rgb(110, 110, 110) inset, 0 0px 0 #444;
+}
+.a:hover {
+  box-shadow: 0 0px 8px rgb(110, 110, 110) inset, 0 0px 0 #444;
+}
+
+.rayita {
+  height: 20px;
+  width: 100%;
+}
+
+.iconamar {
+  background-color: rgb(196, 194, 98) !important;
+}
+.iconrojo {
+  background-color: rgb(196, 98, 98) !important;
+}
+.iconverde {
+  background-color: rgb(98, 196, 106) !important;
+}
+
+.iconazul {
+  background-color: rgb(17, 93, 235) !important;
+}
+
+.iconpreazul {
+  background-color: rgb(106, 109, 114) !important;
+}
+.letra18 {
+  font-size: 20px;
+}
+
+.letrica2 {
+  text-align: center;
+  font-size: 12px !important;
+  font-weight: 400;
+  color: #757575 !important;
+
+}
+
+.botonitem {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.iconavatar {
+  display: inline-block;
+  font-size: 2em;
+  color: grey;
+}
+
+.avatar {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  height: 100px;
+  width: 100px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
+
+.centrar {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ion-fab[bottom][edge] {
+  bottom: 10px;
+}
+
+.back-button-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0);
+}
+
+.form1 {
+  background: rgba(204, 204, 204, 0.2);
+  border-radius: 30px;
+  border: 2px solid white;
+  height: 40px;
+  width: 80%;
+}
+
+.toolbar-background-md {
+  border-color: #1e429a;
+  background: #f8f8f8;
+}
+
+.toolbar-background-ios {
+  background: #1e429a;
+  background: #f8f8f8;
+}
+
+.text-input {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  width: 92%;
+  width: calc(100% - 10px);
+  border: 0;
+  background: transparent;
+  color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+.text-input::-moz-placeholder {
+  color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+.text-input:-ms-input-placeholder {
+  color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: rgb(100, 100, 100);
+  text-align: center;
+}
+
+.boton {
+  border-radius: 30px;
+  height: 40px;
+  width: 80%;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.tabs-md .tab-button-icon {
+  margin-top: 1px;
+  min-width: 3rem;
+  font-size: 3rem;
+  color: rgba(60, 60, 60, 0.7);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform-origin: 50% 150%;
+  transform-origin: 50% 150%;
+}
+
+.item-md,
+.item-ios {
+  padding-left: 16px;
+  padding-right: 0;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: none;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 100%;
+  height: 45px;
+  border-radius: 50% / 100%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.colorp {
+  color: #1e429a;
+}
+
+.my-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 20;
+  top: 0;
+  left: 0;
+}
+
+.bg-1 {
+  background-color: rgb(233, 231, 231);
+}
+
+.fabText {
+  position: absolute;
+  color: white;
+  right: 60px;
+  width: 120px;
+  text-align: right;
+}
+.progress-bar {
+  background-color: #1a1a1a;
+  height: 10px;
+  width: 100%;
+  margin: auto;
+  border-radius: 50px;
+  box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+}
+.progress-bar-inner {
+  display: block;
+  height: 10px;
+  background-color: #009b3a;
+  border-radius: 50px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  position: relative;
+}
+// Step
+
+@import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed");
+
+.Scan {
+  background: #1b1b1b;
+  color: #c7932b;
+}
+
+.centrarv {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 80%;
+}
+
+.Scan-button {
+  color: #ffffff;
+  background-color: #c7932b;
+}
+.wrapper {
+  margin: 0 auto;
+}
+
+@keyframes shadow-pulse {
+  0% {
+    box-shadow: 0 0 0 30px rgba(2, 64, 109, 0.1),
+      0 0 0 60px rgba(2, 64, 109, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 50px rgba(2, 64, 109, 0.1),
+      0 0 0 80px rgba(2, 64, 109, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 30px rgba(2, 64, 109, 0.1),
+      0 0 0 60px rgba(2, 64, 109, 0.1);
+  }
+}
+
+@keyframes shadow-pulse-big {
+  0% {
+    box-shadow: 0 0 0 0px rgba(2, 64, 109, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 70px rgba(2, 64, 109, 0);
+  }
+}
+
+.example-1 {
+  float: left;
+  margin: 40px;
+  width: 130px;
+  height: 130px;
+  font: 13px/130px "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  background: #1e429a;
+  border-radius: 50%;
+  animation: shadow-pulse 2s infinite;
+  padding-top: 10px;
+}
+
+.stepContent {
+  background-color: rgb(233, 231, 231);
+}
+
+.progressbar {
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+  padding: 0px;
+}
+
+.progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  width: 25%;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+  background: #009b3a;
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+.progressbar li.active {
+  color: white;
+  font-weight: 800;
+}
+.progressbar li.active {
+  color: white;
+  font-weight: 800;
+}
+ion-select {
+  max-width: 100%;
+}
+@-webkit-keyframes StepSelect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes StepSelect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes StepSelect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

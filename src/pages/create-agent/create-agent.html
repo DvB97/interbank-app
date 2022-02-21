@@ -1,0 +1,384 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Crear Prospección</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background-color: rgb(233, 231, 231)">
+  <ion-card>
+    <ion-card-content>
+      <ion-row *ngIf="nivel==0">
+        <ion-col col-12>
+          <h2 class="letrica">Nombre <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.name">
+          </ion-input>
+        </ion-col>
+
+        <ion-col col-12>
+          <h2 class="letrica">Dirección <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.direction"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Distrito <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.district"></ion-input>
+        </ion-col>
+        <ion-col col-6>
+          <h2 class="letrica">Provincia <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.province"></ion-input>
+        </ion-col>
+        <ion-col col-6>
+          <h2 class="letrica">Departamento<span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.departament"></ion-input>
+        </ion-col>
+        <ion-col col-6>
+          <ion-label>Región  <span class="redtag">*</span></ion-label>
+          <ion-select [(ngModel)]="data.region">
+            <ion-option value="Lima">Lima</ion-option>
+            <ion-option value="Provincia">Provincia</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-6>
+          <h2 class="letrica">RUC <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.ruc">
+          </ion-input>
+        </ion-col>
+        <ion-col col-6>
+          <h2 class="letrica">Celular <span class="redtag">*</span></h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.phone">
+          </ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Representante legal </h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.legal_representative"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Contacto</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.contact"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Código Único</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.code_unique"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Razón Social</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.social_razon"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Correo</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.correo"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Referencia</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.reference"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Tipo de Agente</ion-label>
+          <ion-select [(ngModel)]="data.type_agent">
+            <ion-option value="Influencia">Influencia</ion-option>
+            <ion-option value="Periferia">Periferia</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Tipo de comprobante </ion-label>
+          <ion-select [(ngModel)]="data.type_comprobante">
+            <ion-option value="Boleta">Boleta</ion-option>
+            <ion-option value="Factura">Factura</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Tienda Asignada </h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.store">
+          </ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Tipo de Negocio </ion-label>
+          <ion-select [(ngModel)]="data.type_negocio">
+            <ion-option value="Agencias de Viajes">Agencias de Viajes</ion-option>
+            <ion-option value="Aeropuertos">Aeropuertos</ion-option>
+            <ion-option value="Bodegas y Minimarkets">Bodegas y Minimarkets </ion-option>
+            <ion-option value="Casinos & Slots">Casinos & Slots</ion-option>
+            <ion-option value="Centros de Cobranza">Centros de Cobranza</ion-option>
+            <ion-option value="Centros de Entretenimiento">Centros de Entretenimiento</ion-option>
+            <ion-option value="Centros de Estudios">Centros de Estudios</ion-option>
+            <ion-option value="Centros y Galerías Comerciales">Centros y Galerías Comerciales</ion-option>
+            <ion-option value="Clínicas & Hospitales"> Clínicas & Hospitales</ion-option>
+            <ion-option value="Clubes, Gimnasios y Spas">Clubes, Gimnasios y Spas</ion-option>
+            <ion-option value="Comercios Turísticos">Comercios Turísticos</ion-option>
+            <ion-option value="Estudios Fotográficos"> Estudios Fotográficos</ion-option>
+            <ion-option value="Ferreterías">Ferreterías</ion-option>
+            <ion-option value="Itinerante">Itinerante</ion-option>
+            <ion-option value="Grifos">Grifos</ion-option>
+            <ion-option value="Hoteles"> Hoteles</ion-option>
+            <ion-option value="Lavanderías"> Lavanderías</ion-option>
+            <ion-option value="Librerías Bazar">Librerías Bazar</ion-option>
+            <ion-option value="Locutorios">Locutorios</ion-option>
+            <ion-option value="Mercados">Mercados</ion-option>
+            <ion-option value="Restaurantes, Panaderías y Pastelerías">Restaurantes, Panaderías y Pastelerías
+            </ion-option>
+            <ion-option value="N/A"> N/A</ion-option>
+            <ion-option value="Terminales Terrestres">Terminales Terrestres</ion-option>
+            <ion-option value="Supermercados y Mayoristas">Supermercados y Mayoristas</ion-option>
+            <ion-option value="Tiendas Comerciales">Tiendas Comerciales</ion-option>
+            <ion-option value="Tiendas Comerciales - Distribuidor Claro">Tiendas Comerciales - Distribuidor Claro
+            </ion-option>
+            <ion-option value="Tiendas de Mejoramiento del Hogar">Tiendas de Mejoramiento del Hogar</ion-option>
+            <ion-option value="Tiendas de Suministros de Cómputo">Tiendas de Suministros de Cómputo</ion-option>
+            <ion-option value="Tiendas de Vestir">Tiendas de Vestir</ion-option>
+            <ion-option value="Tiendas por Departamento">Tiendas por Departamento</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Comisión </ion-label>
+          <ion-select [(ngModel)]="data.commission">
+            <ion-option value="S/. 0.30 Monetarias - S/. 0.10 No Monetarias">S/. 0.30 Monetarias - S/. 0.10 No
+              Monetarias</ion-option>
+            <ion-option value="S/. 0.35 Monetarias - S/. 0.10 No Monetarias">S/. 0.35 Monetarias - S/. 0.10 No
+              Monetarias</ion-option>
+            <ion-option value="S/. 0.40 Monetarias - S/. 0.10 No Monetarias">S/. 0.40 Monetarias - S/. 0.10 No
+              Monetarias</ion-option>
+            <ion-option value="Escalonada">Escalonada</ion-option>
+            <ion-option value="Adenda">Adenda</ion-option>
+            <ion-option value="N/A">N/A</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>¿Cuénta con otro Corresponsal?</ion-label>
+          <ion-select [(ngModel)]="data.correspondent" multiple="true">
+            <ion-option value="BCP">BCP</ion-option>
+            <ion-option value="BBVA">BBVA</ion-option>
+            <ion-option value="Banco de la Nación">Banco de la Nación</ion-option>
+            <ion-option value="Scotiabank">Scotiabank</ion-option>
+            <ion-option value="Kasnet">Kasnet</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Calificación SBS</ion-label>
+          <ion-select [(ngModel)]="data.sbs">
+            <ion-option value="NOR">NOR</ion-option>
+            <ion-option value="CPP">CPP</ion-option>
+            <ion-option value="DEF">DEF</ion-option>
+            <ion-option value="DUD">DUD</ion-option>
+            <ion-option value="PER">PER</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Calificación IBK </ion-label>
+          <ion-select [(ngModel)]="data.ibk">
+            <ion-option value="NOR">NOR</ion-option>
+            <ion-option value="CPP">CPP</ion-option>
+            <ion-option value="DEF">DEF</ion-option>
+            <ion-option value="DUD">DUD</ion-option>
+            <ion-option value="PER">PER</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Linea de recarga inicial acordada con el cliente </h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.line"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Número de locales a instalar</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.locale_install"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <ion-label>Horarios de atención </ion-label>
+          <ion-select [(ngModel)]="data.schedule" multiple="true">
+            <ion-option value="Lun a Vie de 6:00am a 2:00pm">Lun a Vie de 6:00am a 2:00pm</ion-option>
+            <ion-option value="Lun a Vie de 3:00pm a 8:00pm">Lun a Vie de 3:00pm a 8:00pm</ion-option>
+            <ion-option value="Lun a Vie de 3:00am a 10:00pm">Lun a Vie de 3:00am a 10:00pm</ion-option>
+            <ion-option value="Lun a Sab de 6:00am a 2:00pm">Lun a Sab de 6:00am a 2:00pm</ion-option>
+            <ion-option value="Lun a Sab de 3:00pm a 8:00pm">Lun a Sab de 3:00pm a 8:00pm</ion-option>
+            <ion-option value="Lun a Sab de 3:00am a 10:00pm">Lun a Sab de 3:00am a 10:00pm</ion-option>
+            <ion-option value="Lun a Dom de 6:00am a 2:00pm">Lun a Dom de 6:00am a 2:00pm</ion-option>
+            <ion-option value="Lun a Dom de 3:00pm a 8:00pm">Lun a Dom de 3:00pm a 8:00pm</ion-option>
+            <ion-option value="Lun a Dom de 3:00am a 10:00pm">Lun a Dom de 3:00am a 10:00pm</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Observaciones</h2>
+          <ion-textarea [(ngModel)]="data.observaciones" autocomplete="on" autocorrect="on" rows="2" cols="2">
+          </ion-textarea>
+        </ion-col>
+        <ion-col col-12>
+          <h2 class="letrica">Canal</h2>
+          <ion-input class="subrayado" type="text" placeholder="" [(ngModel)]="data.canal"></ion-input>
+        </ion-col>
+        <ion-col col-12>
+          <button icon ion-button color="success" class="boton centrar" on-click="saveData()" *ngIf="nivel==0"
+          [disabled]="!data.name || !data.direction || !data.district || !data.province  || !data.departament || !data.region  || !data.ruc  || !data.phone ">
+          Guardar
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <p class="message" *ngIf="nivel==1">
+          Hola, ayúdanos a completar las siguientes preguntas
+          antes de guardar la ubicación del agente y completar sus datos.</p>
+
+        <ion-col col-12 *ngIf="sugerencia">
+          <div class="animated bounceInRight ">
+            <p class="titlep" *ngIf="point>=50">Sugerencia: No Aplica</p>
+            <p class="titlep" *ngIf="point<=49">Sugerencia: Aplica</p>
+          </div>
+        </ion-col>
+        <button icon ion-button color="secondary" class="boton centrar" on-click="nivel=2" *ngIf="nivel==1">
+          Evaluación
+        </button>
+
+        <ion-col col-12 *ngIf="nivel==2">
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==1">
+            <p class="titlep">¿Está registrado en Infocorp?</p>
+            <ion-row>
+              <ion-col col-6
+                on-click="preguntas=2; point=point+55; question('1','Si','¿Está registrado en Infocorp?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=2; question('1','No','¿Está registrado en Infocorp?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==2">
+            <p class="titlep">¿Tiene agentes cercanos?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=3; point=point+10; question('2','Si','¿Tiene agentes cercanos?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=3; question('2','No','¿Tiene agentes cercanos?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==3">
+            <p class="titlep">¿Zona comercial?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=4; question('3','Si', '¿Zona comercial?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=4; point=point+25; question('3','Si', '¿Zona comercial?'); ">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==4">
+            <p class="titlep">¿El giro del negocio es el adecuado?</p>
+            <ion-row>
+              <ion-col col-6
+                on-click="preguntas=5; nivel=2; sugerencia=true; question('4','Si', '¿El giro del negocio es el adecuado?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6
+                on-click="preguntas=5; nivel=2; point=point+10; sugerencia=true; question('4','No','¿El giro del negocio es el adecuado?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==5">
+            <p class="titlep">¿Ya fue Agente interbank anteriormente?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=6;  question('5','Si','¿Ya fue Agente interbank anteriormente?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=6; question('5','No','¿Ya fue Agente interbank anteriormente?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==6">
+            <p class="titlep">¿El comercio se encuentra en una zona segura?</p>
+            <ion-row>
+              <ion-col col-6
+                on-click="preguntas=7; question('6','Si','¿El comercio se encuentra en una zona segura?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6
+                on-click="preguntas=7; question('6','No','¿El comercio se encuentra en una zona segura?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==7">
+            <p class="titlep">¿El comercio cuenta con buena infraestructura?</p>
+            <ion-row>
+              <ion-col col-6
+                on-click="preguntas=8; question('7','Si','¿El comercio cuenta con buena infraestructura?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6
+                on-click="preguntas=8; question('7','No','¿El comercio cuenta con buena infraestructura?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==8">
+            <p class="titlep">¿El comercio cuenta con todo los documentos?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=9; question('8','Si','¿El comercio cuenta con todo los documentos?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=9; question('8','No','¿El comercio cuenta con todo los documentos?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==9">
+            <p class="titlep">¿El comercio cuenta con capital?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=10;  question('9','Si','¿El comercio cuenta con capital?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=10;  question('9','No','¿El comercio cuenta con capital?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==10">
+            <p class="titlep">¿Es agente BCP ?</p>
+            <ion-row>
+              <ion-col col-6 on-click="preguntas=11; question('10','Si','¿Es agente BCP?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6 on-click="preguntas=11; question('10','No','¿Es agente BCPl?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+          <div class="animated bounceInRight divQuestion" *ngIf="preguntas==11">
+            <p class="titlep">¿El comercio se encuentra interesado?</p>
+            <ion-row>
+              <ion-col col-6
+                on-click="preguntas=12; nivel=5; question('11','Si','¿El comercio  se encuentra interesado?');">
+                <i class="fa fa-check icon"></i>
+                <p style="text-align: center;">Si</p>
+              </ion-col>
+              <ion-col col-6
+                on-click="preguntas=12; nivel=5; question('11','No','¿El comercio  se encuentra interesado?');">
+                <i class="fa fa-times icon"></i>
+                <p style="text-align: center;">No</p>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <div class="spacer" style="width:100%; height: 20px"></div>
+  </ion-card>
+</ion-content>

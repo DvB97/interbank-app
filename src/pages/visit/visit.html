@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Visitas</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: rgb(233, 231, 231)">
+  <ion-list>
+    <ion-item no-padding *ngFor="let item of list">
+      <ion-row>
+        <ion-col class="barrita iconverde" *ngIf="item.status == '1'"> </ion-col>
+        <ion-col class="barrita iconrojo" *ngIf="item.status == '2'"> </ion-col>
+        <ion-col col-11>
+          <p style="display: block" no-margin block class="textlist">
+           {{ item.date}}
+          </p>
+          <p
+            style="display: block; padding-left: 18px;"
+            no-margin
+            block
+            class="textlist"
+          >
+            {{ item.hour }}
+          </p>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

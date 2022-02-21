@@ -1,0 +1,205 @@
+<!--
+  Generated template for the HistorialModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Detalle de Solicitud</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-col col-12>
+    <h1 style="text-align:center;" class="title">Resumen</h1>
+    <ion-list class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        Información:
+      </ion-list-header>
+      <ion-item class="cuerpo">Tipo: {{ data.type }}</ion-item>
+      <ion-item class="cuerpo">Identificador: {{ data.agents.agents }}</ion-item>
+      <ion-item class="cuerpo">Dirección: {{ data.agents.direction }}</ion-item>
+      <ion-item class="cuerpo">Distrito: {{ data.agents.district }}</ion-item>
+      <ion-item class="cuerpo">Provincia: {{ data.agents.province }}</ion-item>
+      <ion-item class="cuerpo">Nombre: {{ data.agents.name }}</ion-item>
+      <ion-item class="cuerpo">Ejecutivo: {{ data.users.name }}</ion-item>
+      <ion-item class="cuerpo">Fecha: {{ data.fecha }}</ion-item>
+      <ion-item>
+        <h2 class="botonitem">Transacciones</h2>
+        <button clear icon-only ion-button float-right on-click="goToTransaccion(data.agents.agents)">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="roles == 'Interbank'">
+        <h2 class="botonitem">Solicitudes</h2>
+        <button clear icon-only ion-button float-right on-click="goToChatHistorial(data.agents.id)">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item>
+        <h2 class="botonitem">Permisos</h2>
+        <button clear icon-only ion-button float-right on-click="goToPermisos(data.agents.agents)">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="data.productMantenimiento" class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        Productos de Mantenimiento
+        <button ion-button color="success" on-click="showMantenimiento(data.id)">
+          <i class="far fa-edit"></i>
+        </button>
+      </ion-list-header>
+      <ion-item *ngFor="let item of data.productMantenimiento" class="cuerpo">
+        {{ item }}
+        <button *ngIf="item=='Letrero Luminoso'" ion-button clear item-end on-click="addLetreroMantto(data.id)">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="data.productInstalacion" class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        Productos de Instalacion
+        <button ion-button color="success" on-click="showInstalacion(data.id)" *ngIf="roles == 'Interbank'">
+          <i class="far fa-edit"></i>
+        </button>
+      </ion-list-header>
+      <ion-item *ngFor="let item of data.productInstalacion" class="cuerpo">
+        {{item}}
+        <button *ngIf="item=='Letrero Luminoso'" ion-button clear item-end on-click="addLetreroInstalacion(data.id)">
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngIf="data.typeRetirement" class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        Tipo de retiro:
+        <button ion-button color="success" on-click="showRetiro(data.id)" *ngIf="roles == 'Interbank'">
+          <i class="far fa-edit"></i>
+        </button>
+      </ion-list-header>
+      <p style="margin-left: 15px;">{{ data.typeRetirement }}</p>
+    </ion-list>
+    <ion-list *ngIf="data.productRetiro" class="cuadroblanco">
+      <ion-list-header style="margin-bottom: 0px;" class="subtitle">
+        Reubicación:
+        <button *ngIf="roles == 'Interbank'" ion-button color="success" on-click="showProductRetiro(data.id)">
+          <i class="far fa-edit"></i>
+        </button>
+      </ion-list-header>
+      <ion-item *ngFor="let item of data.productRetiro" class="cuerpo">{{
+        item
+      }}</ion-item>
+    </ion-list>
+
+    <ion-card *ngIf="data.observaciones" style="margin:0px; width:100%">
+      <ion-card-header class="subtitle">
+        Observaciones del Ejecutivo
+      </ion-card-header>
+      <ion-card-content style="color:black;" class="cuerpo">
+        {{ data.observaciones }}
+      </ion-card-content>
+    </ion-card>
+
+    <div *ngIf="roles != 'Interbank'">
+      <ion-card *ngIf="data.observacionestwo" style="margin:0px; width:100%">
+        <ion-card-header class="subtitle">
+          Observaciones Aprobador
+        </ion-card-header>
+        <ion-card-content style="color:black;" class="cuerpo">
+          {{ data.observacionestwo }}
+        </ion-card-content>
+      </ion-card>
+
+      <br />
+    </div>
+    <div *ngIf="roles != 'Artsign'">
+      <ion-card *ngIf="data.observacionestwo" style="margin:0px; width:100%">
+        <ion-card-header class="subtitle">
+          Observaciones Proveedor
+        </ion-card-header>
+        <ion-card-content style="color:black;" class="cuerpo">
+          {{ data.observacionesthree }}
+        </ion-card-content>
+      </ion-card>
+
+      <br />
+    </div>
+    <div *ngIf="roles == 'Interbank'">
+      <ion-row class="pegadito">
+        <ion-col col-12>
+          <ion-label>Observaciones del Aprobador:</ion-label>
+          <ion-textarea [(ngModel)]="observacionestwo" autocomplete="on" autocorrect="on" rows="10" cols="10"
+            placeholder="Ingrese aqui el mensaje que deseas adjuntar"></ion-textarea>
+        </ion-col>
+        <ion-col col-12>
+          <button ion-button on-click="saveobservacionestwo(data.id)" color="blue">
+            Guardar Observaciones
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="roles == 'Artsign'">
+      <ion-row class="pegadito">
+        <ion-col col-12>
+          <ion-label>Observaciones del Proveedor:</ion-label>
+          <ion-textarea [(ngModel)]="observacionesthree" autocomplete="on" autocorrect="on" rows="10" cols="10"
+            placeholder="Ingrese aqui el mensaje que deseas adjuntar"></ion-textarea>
+        </ion-col>
+        <ion-col col-12>
+          <button ion-button on-click="saveobservacionesthree(data.id)" color="blue">
+            Guardar Observaciones
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <ion-slides pager *ngIf="data.imagenes" style="height:auto;">
+      <ion-slide *ngFor="let field of data.imagenes; let i = index">
+        <img imageViewer style="width:100%;" src="https://agente.artsignsoluciones.com/{{ field.path }}" />
+      </ion-slide>
+    </ion-slides>
+    <div *ngIf="roles == 'Interbank'">
+      <ion-row class="pegadito" *ngIf="data.state != 2">
+        <ion-col col-6>
+          <button ion-button on-click="PreAprobar(data.id)" color="blue">
+            Pre-Aprobar
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button on-click="Aprobar(data.id)" color="success">
+            Aprobar
+          </button>
+        </ion-col>
+        <ion-col col-6 *ngIf="data.state != 2">
+          <button ion-button on-click="Rechazar(data.id)" color="danger">
+            Rechazar
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="roles == 'Artsign'">
+      <ion-row class="pegadito">
+        <ion-col col-12>
+          <button ion-button on-click="fechafinal(data.id)" block color="blue">
+            Asignar Fecha
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="pegadito">
+        <ion-col col-12>
+          <button ion-button on-click="redireccionar(data.id)" block color="info">
+            Redireccionar
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="pegadito">
+        <ion-col col-12>
+          <button ion-button on-click="completar(data.id)" block color="success">
+            Completar Solicitud
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-col>
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Perfil</ion-title>
+    <button clear ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: rgb(233, 231, 231)">
+  <div style="width:100%; height: 2%" class="spacer"></div>
+  <img
+    class="avatar centrar"
+    src="{{ avatar}}" 
+    (click)="presentActionSheet()"
+    alt="Avatar"
+  >
+
+  <div style="width:100%; height: 2%" class="spacer"></div>
+
+  <ion-list>
+    <ion-item-divider color="primary" class="title">Mis Datos</ion-item-divider>
+    <!-- <ion-item  class="cuerpo">
+        <ion-icon name="card" item-start></ion-icon>
+        Registro {{ register }}
+      </ion-item>
+    <ion-item  class="cuerpo">
+      <ion-icon name="card" item-start></ion-icon>
+      DNI {{ dni }}
+    </ion-item> -->
+    <ion-item  class="cuerpo">
+      <ion-icon name="person" item-start></ion-icon>
+      {{ name }}
+    </ion-item>
+    <ion-item  class="cuerpo">
+      <ion-icon name="calendar" item-start></ion-icon>
+      {{ birthday }}
+    </ion-item>
+    <ion-item  class="cuerpo">
+      <ion-icon name="call" item-start></ion-icon>
+      {{ phone }}
+    </ion-item>
+  </ion-list>
+
+  <button
+    ion-button
+    color="secondary"
+    class="boton centrar"
+    on-click="presentPrompt()"
+  >
+    Cambiar contraseña
+  </button>
+  <div style="width:100%; height: 2%" class="spacer"></div>
+
+  <button
+    ion-button
+    color="secondary"
+    class="boton centrar"
+    on-click="presentPhone()"
+  >
+    Afiliar Número
+  </button>
+  <div style="width:100%; height: 2%" class="spacer"></div>
+  <button class="boton centrar" ion-button color="primary" on-click="logout()">
+    Cerrar Sesión
+  </button>
+</ion-content>
